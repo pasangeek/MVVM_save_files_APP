@@ -10,5 +10,9 @@ class MyViewModel : ViewModel() {
     private val _savedText =MutableLiveData<String>(null)
     val savedText:LiveData<String>
     get() = _savedText
+fun savedText(Mytext:String) {
 
+    _savedText.value= Mytext
+
+}
 }
