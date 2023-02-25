@@ -2,6 +2,7 @@ package com.example.save_files_sample_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.Bindable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,4 +16,7 @@ fun performsaveText(savedText:String) {
     _saveText.value= savedText
 
 }
+
+
+
 }

@@ -22,15 +22,15 @@ class MainActivity : AppCompatActivity() {
         binding.myVM = viewModel
         binding.lifecycleOwner = this
         binding.buttonsave.setOnClickListener {
-
-            viewModel.performsaveText(binding.editTextTextPersonName.text.toString())
+           // viewModel.performsaveText (FileSaver(this).writeToFile(viewModel.savedText.value.toString())
+           // viewModel.performsaveText(binding.editTextTextPersonName.text.toString())
             FileSaver(this).writeToFile(viewModel.savedText.value.toString())
         }
 
 
         binding.button2view.setOnClickListener {
 
-            viewModel.performsaveText(FileSaver(this).readFromFile())
+          viewModel.performsaveText(FileSaver(this).readFromFile())
 
         }
     }
