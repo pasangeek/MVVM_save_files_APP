@@ -1,8 +1,8 @@
 package com.example.save_files_sample_app
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.save_files_sample_app.databinding.ActivityMainBinding
 
@@ -15,11 +15,22 @@ class MainActivity : AppCompatActivity() {
 
         binding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+
+
         //Data binding
-binding.myVM = viewModel
+        binding.myVM = viewModel
+        binding.lifecycleOwner = this
         binding.buttonsave.setOnClickListener {
 
+            viewModel.performsaveText(binding.editTextTextPersonName.text.toString())
+            FileSaver(this).writeToFile(viewModel.savedText.value.toString())
+        }
 
+
+        binding.button2view.setOnClickListener {
+
+            viewModel.performsaveText(FileSaver(this).readFromFile())
 
         }
     }

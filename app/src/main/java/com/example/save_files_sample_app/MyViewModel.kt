@@ -7,12 +7,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MyViewModel : ViewModel() {
-    private val _savedText =MutableLiveData<String>(null)
+    private val _saveText =MutableLiveData<String>(null)
     val savedText:LiveData<String>
-    get() = _savedText
-fun savedText(Mytext:String) {
+    get() = _saveText
+fun performsaveText(savedText:String) {
 
-    _savedText.value= Mytext
+    _saveText.value= savedText
 
 }
 }
